@@ -1,0 +1,137 @@
+{
+  "api_key": "IVY26-BBB539A91F7A",
+  "candidate": {
+    "name": "Sonu Sahani",
+    "email": "sonu.20233573@mnnit.ac.in",
+    "repo_url": "YOUR_GITHUB_REPO_URL",
+    "demo_url": "YOUR_DEPLOYED_APP_URL"
+  },
+  "answers": {
+    "total_listing_records": 50,
+    "unique_properties": 50,
+    "active_listings": 40,
+    "corrupt_listing_ids": [
+      "MAG-3001035",
+      "MAG-3001327",
+      "MAG-3001519",
+      "MAG-3003434"
+    ],
+    "total_monthly_rent": 198100,
+    "avg_price_per_sqft_2bhk": 10789.96,
+    "costliest_project": {
+      "project_id": "P30015",
+      "price_max_inr": 97.8
+    },
+    "listings_last_7_days": 1,
+    "fake_listing_ids": [
+      "ZER-3001479"
+    ],
+    "projects_with_wrong_listing_count": 47
+  },
+  "findings": [
+    {
+      "endpoint": "/v1/listing/{id}",
+      "category": "missing_endpoint",
+      "documented": "The documentation specifies GET /v1/listing/{id} for retrieving a single listing.",
+      "actual": "The documented route returns 404 for a valid listing ID. The working route is GET /v1/listings/{id}.",
+      "how_found": "Requested a known valid listing using the documented singular route and received 404, then requested the same listing using the plural route and received the listing successfully.",
+      "impact": "Clients following the documented route cannot retrieve an individual listing.",
+      "evidence": [
+        "SQU-3001712"
+      ]
+    },
+    {
+      "endpoint": "/v1/favourites",
+      "category": "missing_endpoint",
+      "documented": "The documentation specifies the favourites endpoint for retrieving, saving and removing saved listings.",
+      "actual": "The documented /v1/favourites endpoint returns 404. The working saved-listing endpoint is /v1/saved.",
+      "how_found": "Called the documented favourites endpoint with a valid authenticated session and received 404, then tested /v1/saved and received HTTP 200.",
+      "impact": "A client implementing saved listings from the documentation cannot use the documented endpoint.",
+      "evidence": []
+    },
+    {
+      "endpoint": "/v1/saved",
+      "category": "undocumented_endpoint",
+      "documented": "No /v1/saved endpoint is documented.",
+      "actual": "GET /v1/saved exists and returns the authenticated user's saved listings.",
+      "how_found": "After the documented /v1/favourites route returned 404, tested /v1/saved and received HTTP 200.",
+      "impact": "The actual saved-listing API is undocumented.",
+      "evidence": []
+    },
+    {
+      "endpoint": "/v1/saved",
+      "category": "consistency",
+      "documented": "The documented favourites POST request uses an id field.",
+      "actual": "POST /v1/saved requires listing_id. Sending id returns HTTP 422, while sending listing_id returns HTTP 201.",
+      "how_found": "Tested both request body formats against the working saved endpoint using a valid listing ID.",
+      "impact": "Following the documented request format causes validation failure.",
+      "evidence": [
+        "DWE-3002501"
+      ]
+    },
+    {
+      "endpoint": "/v1/analytics/summary",
+      "category": "missing_endpoint",
+      "documented": "The documentation specifies GET /v1/analytics/summary for analytics summary data.",
+      "actual": "GET /v1/analytics/summary returns HTTP 404 Not Found.",
+      "how_found": "Called the documented analytics endpoint with a valid authenticated session and received 404.",
+      "impact": "The documented analytics endpoint cannot be used to populate the Insights screen.",
+      "evidence": []
+    },
+    {
+      "endpoint": "/v1/projects",
+      "category": "consistency",
+      "documented": "The project documentation describes total_listings as the current listing count and states that it should agree with the listing endpoint.",
+      "actual": "The reported project listing counts disagree with the listing records for 47 projects.",
+      "how_found": "Fetched the project and listing datasets, grouped listings by project_id, and compared the actual listing counts against total_listings.",
+      "impact": "The total_listings value cannot reliably be used as the current number of listings for a project.",
+      "evidence": [
+        "P30001",
+        "P30002",
+        "P30003",
+        "P30004",
+        "P30005",
+        "P30006",
+        "P30007",
+        "P30009",
+        "P30011",
+        "P30012",
+        "P30013",
+        "P30014",
+        "P30016",
+        "P30017",
+        "P30018",
+        "P30019",
+        "P30020",
+        "P30021",
+        "P30022",
+        "P30023"
+      ]
+    },
+    {
+      "endpoint": "/v1/listings",
+      "category": "data_quality",
+      "documented": "The endpoint returns residential listing records containing bedroom and carpet-area information.",
+      "actual": "Four residential listings contain implausibly small carpet areas for their stated bedroom counts.",
+      "how_found": "Fetched the listing dataset and checked bedroom counts against carpet_area values, identifying residential records with physically implausible areas.",
+      "impact": "These records can produce misleading property comparisons and price-per-square-foot calculations.",
+      "evidence": [
+        "MAG-3001035",
+        "MAG-3001327",
+        "MAG-3001519",
+        "MAG-3003434"
+      ]
+    },
+    {
+      "endpoint": "/v1/listings",
+      "category": "fraud",
+      "documented": "The endpoint returns property listings.",
+      "actual": "One listing contains a direct request to pay a token amount immediately to block the unit, which is a strong non-genuine listing signal.",
+      "how_found": "Reviewed returned listing descriptions for suspicious payment-pressure language and reproduced the finding in the listing data.",
+      "impact": "Displaying this record as a normal property listing could expose users to a potentially fraudulent transaction.",
+      "evidence": [
+        "ZER-3001479"
+      ]
+    }
+  ]
+}

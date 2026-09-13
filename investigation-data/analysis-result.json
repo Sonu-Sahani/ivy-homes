@@ -1,0 +1,348 @@
+{
+  "reference": "2026-09-10T00:00:00+05:30",
+  "q1_total_listing_records": 50,
+  "q2_unique_properties": 50,
+  "q3_active_listings": 40,
+  "q4_corrupt_listing_ids": [
+    "MAG-3001035",
+    "MAG-3001327",
+    "MAG-3001519",
+    "MAG-3003434"
+  ],
+  "q5_total_monthly_rent_kharadi": 198100,
+  "q6_avg_price_per_sqft_2bhk": 10789.96,
+  "q7_costliest_project": {
+    "project_id": "P30015",
+    "price_max": 97.8
+  },
+  "q8_listings_last_7_days": 1,
+  "q9_fake_listing_ids": [
+    "ZER-3001479"
+  ],
+  "q10_projects_with_wrong_listing_count": 47,
+  "q4_details": [
+    {
+      "listing_id": "MAG-3001519",
+      "bedroom": 2,
+      "carpet_area": 73,
+      "property_type": "independent house",
+      "apartment_name": "Shriram Heights",
+      "reason": "Impossible residential carpet area"
+    },
+    {
+      "listing_id": "MAG-3001327",
+      "bedroom": 4,
+      "carpet_area": 137,
+      "property_type": "villa",
+      "apartment_name": "Rohan Meadows",
+      "reason": "Impossible residential carpet area"
+    },
+    {
+      "listing_id": "MAG-3003434",
+      "bedroom": 3,
+      "carpet_area": 110,
+      "property_type": "apartment",
+      "apartment_name": "Adarsh Residency Phase 1",
+      "reason": "Impossible residential carpet area"
+    },
+    {
+      "listing_id": "MAG-3001035",
+      "bedroom": 4,
+      "carpet_area": 144,
+      "property_type": "builder floor",
+      "apartment_name": "Nitesh Enclave",
+      "reason": "Impossible residential carpet area"
+    }
+  ],
+  "q9_details": [
+    {
+      "listing_id": "ZER-3001479",
+      "reason": "Requests immediate token payment to block property",
+      "description": "Bright and airy 4 BHK apartment in Shriram Park, Kharadi. Fully-furnished, south-east-facing. Covered parking; modular kitchen. Pay a token amount of Rs 25,000 today to block the unit."
+    }
+  ],
+  "q10_details": [
+    {
+      "project_id": "P30001",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30002",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    },
+    {
+      "project_id": "P30003",
+      "reported_count": 7,
+      "actual_count": 0,
+      "difference": -7
+    },
+    {
+      "project_id": "P30004",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30005",
+      "reported_count": 1,
+      "actual_count": 0,
+      "difference": -1
+    },
+    {
+      "project_id": "P30006",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30007",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30009",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    },
+    {
+      "project_id": "P30011",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30012",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30013",
+      "reported_count": 7,
+      "actual_count": 1,
+      "difference": -6
+    },
+    {
+      "project_id": "P30014",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    },
+    {
+      "project_id": "P30016",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30017",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30018",
+      "reported_count": 6,
+      "actual_count": 0,
+      "difference": -6
+    },
+    {
+      "project_id": "P30019",
+      "reported_count": 6,
+      "actual_count": 0,
+      "difference": -6
+    },
+    {
+      "project_id": "P30020",
+      "reported_count": 4,
+      "actual_count": 1,
+      "difference": -3
+    },
+    {
+      "project_id": "P30021",
+      "reported_count": 12,
+      "actual_count": 0,
+      "difference": -12
+    },
+    {
+      "project_id": "P30022",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30023",
+      "reported_count": 1,
+      "actual_count": 0,
+      "difference": -1
+    },
+    {
+      "project_id": "P30024",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30025",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30026",
+      "reported_count": 7,
+      "actual_count": 0,
+      "difference": -7
+    },
+    {
+      "project_id": "P30027",
+      "reported_count": 7,
+      "actual_count": 1,
+      "difference": -6
+    },
+    {
+      "project_id": "P30028",
+      "reported_count": 2,
+      "actual_count": 0,
+      "difference": -2
+    },
+    {
+      "project_id": "P30029",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30030",
+      "reported_count": 10,
+      "actual_count": 0,
+      "difference": -10
+    },
+    {
+      "project_id": "P30031",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    },
+    {
+      "project_id": "P30032",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30033",
+      "reported_count": 2,
+      "actual_count": 0,
+      "difference": -2
+    },
+    {
+      "project_id": "P30034",
+      "reported_count": 6,
+      "actual_count": 0,
+      "difference": -6
+    },
+    {
+      "project_id": "P30035",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30036",
+      "reported_count": 6,
+      "actual_count": 0,
+      "difference": -6
+    },
+    {
+      "project_id": "P30037",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30038",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30039",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30040",
+      "reported_count": 4,
+      "actual_count": 0,
+      "difference": -4
+    },
+    {
+      "project_id": "P30041",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    },
+    {
+      "project_id": "P30042",
+      "reported_count": 2,
+      "actual_count": 0,
+      "difference": -2
+    },
+    {
+      "project_id": "P30043",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    },
+    {
+      "project_id": "P30044",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30045",
+      "reported_count": 6,
+      "actual_count": 0,
+      "difference": -6
+    },
+    {
+      "project_id": "P30046",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30047",
+      "reported_count": 3,
+      "actual_count": 0,
+      "difference": -3
+    },
+    {
+      "project_id": "P30048",
+      "reported_count": 7,
+      "actual_count": 0,
+      "difference": -7
+    },
+    {
+      "project_id": "P30049",
+      "reported_count": 2,
+      "actual_count": 0,
+      "difference": -2
+    },
+    {
+      "project_id": "P30050",
+      "reported_count": 5,
+      "actual_count": 0,
+      "difference": -5
+    }
+  ]
+}
