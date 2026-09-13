@@ -160,23 +160,6 @@ export default function Login() {
             />
           </div>
 
-          {/* REMEMBER ME */}
-          <div className="flex items-center mb-5">
-            <input
-              type="checkbox"
-              id="remember"
-              checked={rememberMe}
-              onChange={(e) => setRememberMe(e.target.checked)}
-              className="w-4 h-4 accent-[#5D7052]"
-            />
-
-            <label
-              htmlFor="remember"
-              className="ml-2 text-sm text-[#77736B]"
-            >
-              Remember me
-            </label>
-          </div>
 
           {/* ERROR */}
           {error && (
