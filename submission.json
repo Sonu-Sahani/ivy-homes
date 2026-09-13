@@ -3,8 +3,8 @@
   "candidate": {
     "name": "Sonu Sahani",
     "email": "sonu.20233573@mnnit.ac.in",
-    "repo_url": "YOUR_GITHUB_REPO_URL",
-    "demo_url": "YOUR_DEPLOYED_APP_URL"
+    "repo_url": "https://github.com/Sonu-Sahani/ivy-homes",
+    "demo_url": "https://ivy-homes-nu.vercel.app/login"
   },
   "answers": {
     "total_listing_records": 50,
