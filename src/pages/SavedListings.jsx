@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import api from "../services/api";
+import Navbar from "../components/Navbar";
 
 export default function SavedListings() {
   const [savedListings, setSavedListings] = useState([]);
@@ -61,6 +62,8 @@ export default function SavedListings() {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#F5F3EE]">
+        <Navbar />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
           <div className="h-8 w-40 bg-[#E4E1D9] rounded animate-pulse" />
           <div className="h-4 w-64 bg-[#E4E1D9] rounded animate-pulse mt-3" />
@@ -72,6 +75,7 @@ export default function SavedListings() {
                 className="bg-white rounded-2xl overflow-hidden border border-[#DDD9D0]"
               >
                 <div className="h-52 bg-[#E4E1D9] animate-pulse" />
+
                 <div className="p-5 space-y-3">
                   <div className="h-5 bg-[#E4E1D9] rounded w-3/4 animate-pulse" />
                   <div className="h-4 bg-[#E4E1D9] rounded w-1/2 animate-pulse" />
@@ -87,6 +91,8 @@ export default function SavedListings() {
 
   return (
     <div className="min-h-screen bg-[#F5F3EE]">
+      <Navbar />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
 
         {/* Header */}
@@ -161,22 +167,24 @@ export default function SavedListings() {
                 >
                   <div className="h-52 overflow-hidden bg-[#E8E5DE]">
                     <img
-                      src={`https://images.unsplash.com/photo-${[
-                        "1600585154340-be6161a56a0c",
-                        "1600607687920-4e2a09cf159d",
-                        "1600566753190-17f0baa2a6c3",
-                        "1600047509807-ba8f99d2cdde",
-                      ][
-                        Math.abs(
-                          String(listing.listing_id)
-                            .split("")
-                            .reduce(
-                              (sum, char) =>
-                                sum + char.charCodeAt(0),
-                              0
-                            )
-                        ) % 4
-                      ]}?auto=format&fit=crop&w=900&q=80`}
+                      src={`https://images.unsplash.com/photo-${
+                        [
+                          "1600585154340-be6161a56a0c",
+                          "1600607687920-4e2a09cf159d",
+                          "1600566753190-17f0baa2a6c3",
+                          "1600047509807-ba8f99d2cdde",
+                        ][
+                          Math.abs(
+                            String(listing.listing_id)
+                              .split("")
+                              .reduce(
+                                (sum, char) =>
+                                  sum + char.charCodeAt(0),
+                                0
+                              )
+                          ) % 4
+                        ]
+                      }?auto=format&fit=crop&w=900&q=80`}
                       alt={listing.apartment_name}
                       className="w-full h-full object-cover hover:scale-105 transition duration-500"
                     />
@@ -225,15 +233,11 @@ export default function SavedListings() {
                   </div>
 
                   <div className="flex items-center gap-3 mt-4 text-xs text-[#77736B]">
-                    <span>
-                      {listing.bedroom} BHK
-                    </span>
+                    <span>{listing.bedroom} BHK</span>
 
                     <span className="w-1 h-1 rounded-full bg-[#B9B5AC]" />
 
-                    <span>
-                      {listing.carpet_area} sq.ft
-                    </span>
+                    <span>{listing.carpet_area} sq.ft</span>
                   </div>
 
                   <div className="mt-4 pt-4 border-t border-[#E7E3DB]">
