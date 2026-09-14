@@ -270,7 +270,7 @@ GitHub Repository:
 
 Live Demo:
 
-`YOUR_DEPLOYED_APP_URL`
+`https://ivy-homes-nu.vercel.app/login`
 
 ## Submission
 
