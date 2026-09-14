@@ -266,7 +266,7 @@ With two additional days, I would focus on:
 
 GitHub Repository:
 
-`YOUR_GITHUB_REPO_URL`
+`https://github.com/Sonu-Sahani/ivy-homes`
 
 Live Demo:
 
